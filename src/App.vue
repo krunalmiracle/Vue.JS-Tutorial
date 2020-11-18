@@ -3,7 +3,7 @@
     <h1 class="TitleTxt">TweetBox</h1>
     <Tweet v-for="msg in msgArr" name="John" :message="msg" :key="msg"/>
     <input v-model="inputTxt" type="text" class="chat_inline"> <!-- This input is realted to variable inputTxt-->
-    <button v-on:click="clickAlert2(testNumber)" class="chat_inline">Click Me </button>
+    <button v-on:click="clickAlert2()" class="chat_inline">Click Me </button>
   </div>
 </template>
 
@@ -17,7 +17,6 @@ export default {
   },
   data(){
     return{
-      testNumber: 5,
       msgArr:["Well Hello There", "Patience my Friend"],
       inputTxt: ""
     }
@@ -25,14 +24,6 @@ export default {
   methods:{
     clickAlert: function(){
       alert("Button Clicked!")
-    },
-    clickAlert2:function(num){
-      //alert("Button Clicked Option2 with num: "+num);
-      console.log(num);
-      console.log(this.msgArr);
-      console.log(this.inputTxt);
-      this.msgArr.push(this.inputTxt);
-      console.log(this.msgArr);
     }
   }
 }
